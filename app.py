@@ -161,7 +161,11 @@ def show_login(request: Request):
 
 # Handle registration form
 @app.post("/do-register")
-def do_register(request: Request, email: str = Form(...), password: str = Form(...)):
+async def do_register(request: Request):
+    form = await request.form()
+    email = form.get("email")
+    password = form.get("password")
+
     conn = sqlite3.connect("users.db")
     cursor = conn.cursor()
     hashed_pw = hash_password(password)
@@ -180,6 +184,7 @@ def do_register(request: Request, email: str = Form(...), password: str = Form(.
     conn.close()
     return RedirectResponse(f"/dashboard?email={email}&api_key={api_key}", status_code=303)
 
+
 # Handle login form
 @app.post("/do-login")
 def do_login(request: Request, email: str = Form(...), password: str = Form(...)):
@@ -196,7 +201,13 @@ def do_login(request: Request, email: str = Form(...), password: str = Form(...)
     return RedirectResponse(f"/dashboard?email={email}&api_key={api_key}", status_code=303)
 
 # Dashboard page
-@app.get("/dashboard", response_class=HTMLResponse)
+@app.get("/dashboard")
 def dashboard(request: Request, email: str, api_key: str):
-    return templates.TemplateResponse("dashboard.html", {"request": request, "email": email, "api_key": api_key})
-
+    return templates.TemplateResponse(
+        "dashboard.html",
+        {
+            "request": request,
+            "email": email,
+            "api_key": api_key
+        }
+    )

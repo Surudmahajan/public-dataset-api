@@ -2,67 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Login or Register</title>
+  <title>Register or Login</title>
   <style>
     body {
-      background: #f0f4f8;
+      background: #f2f6fc;
       font-family: Arial, sans-serif;
-      display: flex;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
     }
-    .container {
-      background: white;
+    .card {
+      max-width: 400px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 40px 30px;
       border-radius: 12px;
-      padding: 40px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-      width: 350px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       text-align: center;
     }
-    input {
-      width: 90%;
-      padding: 10px;
+    .card h2 {
+      margin-bottom: 20px;
+    }
+    form {
+      margin: 0;
+    }
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 10px;
       margin: 10px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
     }
     button {
-      padding: 10px 20px;
-      margin: 10px;
-      border: none;
+      flex: 1;
       background: #007bff;
-      color: white;
-      border-radius: 5px;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
       cursor: pointer;
+      font-size: 16px;
     }
     button:hover {
       background: #0056b3;
     }
-    .msg {
+    .message {
       color: red;
-      margin-top: 10px;
+      text-align: center;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="card">
     <h2>Register or Login</h2>
-    <form method="post" action="/do-register">
-      <input type="email" name="email" placeholder="Email" required /><br/>
-      <input type="password" name="password" placeholder="Password" required /><br/>
-      <button type="submit">Register</button>
-    </form>
-
-    <form method="post" action="/do-login">
-      <input type="email" name="email" placeholder="Email" required /><br/>
-      <input type="password" name="password" placeholder="Password" required /><br/>
-      <button type="submit">Login</button>
-    </form>
 
     {% if message %}
-    <div class="msg">{{ message }}</div>
+      <div class="message">{{ message }}</div>
     {% endif %}
+
+    <form method="post">
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+
+      <div class="button-group">
+        <button type="submit" formaction="/do-register">Register</button>
+        <button type="submit" formaction="/do-login">Login</button>
+      </div>
+    </form>
   </div>
 </body>
 </html>
