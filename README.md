@@ -1,95 +1,94 @@
-# 📊 Public Dataset API — Single File Project
+ ##📊 Public Dataset API — Single File Project
+This is a simple Public Dataset API built with FastAPI — everything is inside one Python file (app.py).
+Users can register, log in, and get a unique API key.
+The project uses a local SQLite database and HTML templates.
 
-This is a simple **Public Dataset API** built with **FastAPI** — all logic is inside **one file (`app.py`)**.  
-Users can **register**, **log in**, and get a **unique API key**.  
-Everything is done in **one Python file**, plus **HTML templates** in a `templates/` folder.
+##🚀 Features
+Everything in one file (app.py)
 
----
+User registration and login
 
-## 🚀 Features
+Passwords are securely hashed
 
-- ✅ All backend logic in `app.py`
-- ✅ User **registration** & **login**
-- ✅ Secure **password hashing**
-- ✅ Unique **API key** for each user
-- ✅ SQLite database (`users.db`) — auto-created
-- ✅ Clean HTML pages for login & dashboard
-- ✅ No extra modules — **one-file backend**
+Every user gets a unique API key
 
----
+Uses SQLite database (users.db) which is created automatically
 
-## 📂 Project Structure
+Simple HTML pages for login and dashboard
 
-📂 public-dataset-api/
-├── app.py
-├── templates/
-│ ├── login.html
-│ ├── dashboard.html
-├── users.db (created automatically)
-├── README.md
+##📂 Project Structure
+app.py — the main FastAPI app (one file)
 
-yaml
-Copy
-Edit
+templates/ — contains login.html and dashboard.html
 
----
+users.db — the SQLite database (created automatically)
 
-## ⚙️ Tech Used
+README.md — this file
 
-- **Python 3**
-- **FastAPI**
-- **SQLite**
-- **Jinja2** (HTML templates)
-- **python-multipart** (form data)
+##⚙️ Tech Used
+Python
 
----
+FastAPI
 
-## 🗝️ How It Works
+SQLite
 
-1️⃣ **New user?** → Register with email + password → get your API key  
-2️⃣ **Returning user?** → Log in → see your API key again  
-3️⃣ All routes are handled in `app.py`  
-4️⃣ Database: `users.db` stores users with **hashed passwords** and API keys
+Jinja2 (for HTML templates)
 
----
+python-multipart (for handling form data)
 
-## ✅ How To Run
+##🗝️ How It Works
 
-# 1️⃣ **Clone this repository**
+New users can register with their email and password — then they get an API key.
 
-```bash
-git clone https://github.com/Surudmahajan/public-dataset-api.git
-cd public-dataset-api
+Returning users can log in and see their API key again.
 
-2️⃣ Create & activate a virtual environment
+User info is saved in users.db with hashed passwords.
 
-Windows:
+##✅ How To Run This Project
+Clone this project to your computer
+Download it from GitHub or clone it using git.
 
-bash
-Copy
-Edit
-python -m venv .venv
-.venv\Scripts\activate
-macOS/Linux:
+Create a virtual environment
+Use Python’s venv to keep your packages clean.
 
-bash
-Copy
-Edit
-python3 -m venv .venv
-source .venv/bin/activate
-3️⃣ Install dependencies
+Activate the virtual environment
+On Windows: run the activate script in the .venv\Scripts folder.
+On macOS/Linux: use source .venv/bin/activate.
 
-bash
-Copy
-Edit
-pip install fastapi uvicorn jinja2 python-multipart
-4️⃣ Run the app
+Install the required packages
+Install FastAPI, Uvicorn, Jinja2, and python-multipart using pip.
 
-bash
-Copy
-Edit
-uvicorn app:app --reload
-5️⃣ Open your browser
+Run the app
+Use Uvicorn to start the server.
+The app will be available at http://127.0.0.1:8000.
 
-Visit: http://127.0.0.1:8000
+Visit the site in your browser
+You will see the signup and login form. Register or log in and see your API key on the dashboard.
+
+##📌 Important Routes
+/ — signup and login page
+
+/do-register — handles registration
+
+/do-login — handles login
+
+/dashboard — shows the user’s API key
+
+##✍️ Contributing
+Pull requests are welcome! Fork this repo, make your changes, and open a PR.
+
+##✍🏻Author
+Surud Mahajan
+
+##⚖️ License
+This project is under the MIT License.
+
+
+
+
+
+
+
+
+
 
