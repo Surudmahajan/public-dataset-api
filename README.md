@@ -1,8 +1,12 @@
 # 📊 Public Dataset API — Single File Project
 
-This is a simple **Public Dataset API** built with **FastAPI** — everything is inside **one Python file** (`app.py`).  
-Users can **register**, **log in**, and get a **unique API key**.  
-The project uses a local **SQLite** database and **HTML templates**.
+Welcome to the Public Dataset API, a lightweight and beginner-friendly project that shows how to build a fully functional API service using FastAPI, all inside one Python file (app.py).
+
+With this simple project, you’ll learn how to handle user registration, secure login, and unique API key generation, backed by a local SQLite database.
+It’s perfect for students, developers, and anyone who wants a clean example of building a real-world API with a user dashboard, password hashing, and HTML templates — all without complicated setups or extra files.
+
+Use it as a starting point for your own APIs, learn the basics of authentication, or showcase it in your portfolio to demonstrate practical FastAPI skills.
+
 
 ---
 
