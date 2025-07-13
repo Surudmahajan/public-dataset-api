@@ -1,88 +1,102 @@
- ##📊 Public Dataset API — Single File Project
-This is a simple Public Dataset API built with FastAPI — everything is inside one Python file (app.py).
-Users can register, log in, and get a unique API key.
-The project uses a local SQLite database and HTML templates.
+# 📊 Public Dataset API — Single File Project
 
-##🚀 Features
-Everything in one file (app.py)
+This is a simple **Public Dataset API** built with **FastAPI** — everything is inside **one Python file** (`app.py`).  
+Users can **register**, **log in**, and get a **unique API key**.  
+The project uses a local **SQLite** database and **HTML templates**.
 
-User registration and login
+---
 
-Passwords are securely hashed
+## 🚀 Features
 
-Every user gets a unique API key
+- Everything in **one file** (`app.py`)
+- User **registration** and **login**
+- Passwords are **securely hashed**
+- Every user gets a **unique API key**
+- Uses **SQLite** (`users.db`) which is created automatically
+- Simple **HTML pages** for login and dashboard
 
-Uses SQLite database (users.db) which is created automatically
+---
 
-Simple HTML pages for login and dashboard
+## 📂 Project Structure
+public-dataset-api/
+├── app.py # The main FastAPI app (one file)
+├── templates/ # Contains HTML templates
+│ ├── login.html
+│ ├── dashboard.html
+├── users.db # SQLite database (created automatically)
+├── README.md # This file
 
-##📂 Project Structure
-app.py — the main FastAPI app (one file)
+yaml
+Copy
+Edit
 
-templates/ — contains login.html and dashboard.html
+---
 
-users.db — the SQLite database (created automatically)
+## ⚙️ Tech Used
 
-README.md — this file
+- **Python**
+- **FastAPI**
+- **SQLite**
+- **Jinja2** (for HTML templates)
+- **python-multipart** (for handling form data)
 
-##⚙️ Tech Used
-Python
+---
 
-FastAPI
+## 🗝️ How It Works
 
-SQLite
+- New users can **register** with their email and password — then they get an **API key**.
+- Returning users can **log in** and see their **API key** again.
+- User info is saved in **`users.db`** with **hashed passwords**.
 
-Jinja2 (for HTML templates)
+---
 
-python-multipart (for handling form data)
+## ✅ How To Run This Project
 
-##🗝️ How It Works
+1. **Clone this project**  
+   Download it from GitHub or clone it using `git`.
 
-New users can register with their email and password — then they get an API key.
+2. **Create a virtual environment**  
+   Use Python’s `venv` to keep your packages clean.
 
-Returning users can log in and see their API key again.
+3. **Activate the virtual environment**  
+   - **Windows:** run the `activate` script in the `.venv\Scripts` folder  
+   - **macOS/Linux:** use `source .venv/bin/activate`
 
-User info is saved in users.db with hashed passwords.
+4. **Install the required packages**  
+   Install FastAPI, Uvicorn, Jinja2, and python-multipart using `pip`.
 
-##✅ How To Run This Project
-Clone this project to your computer
-Download it from GitHub or clone it using git.
+5. **Run the app**  
+   Use Uvicorn to start the server. The app will be available at `http://127.0.0.1:8000`.
 
-Create a virtual environment
-Use Python’s venv to keep your packages clean.
+6. **Visit the site in your browser**  
+   You will see the **signup and login form**. Register or log in and see your **API key** on the **dashboard**.
 
-Activate the virtual environment
-On Windows: run the activate script in the .venv\Scripts folder.
-On macOS/Linux: use source .venv/bin/activate.
+---
 
-Install the required packages
-Install FastAPI, Uvicorn, Jinja2, and python-multipart using pip.
+## 📌 Important Routes
 
-Run the app
-Use Uvicorn to start the server.
-The app will be available at http://127.0.0.1:8000.
+- `/` → Signup and login page
+- `/do-register` → Handles registration
+- `/do-login` → Handles login
+- `/dashboard` → Shows the user’s API key
 
-Visit the site in your browser
-You will see the signup and login form. Register or log in and see your API key on the dashboard.
+---
 
-##📌 Important Routes
-/ — signup and login page
+## ✍️ Contributing
 
-/do-register — handles registration
-
-/do-login — handles login
-
-/dashboard — shows the user’s API key
-
-##✍️ Contributing
 Pull requests are welcome! Fork this repo, make your changes, and open a PR.
 
-##✍🏻Author
-Surud Mahajan
+---
 
-##⚖️ License
-This project is under the MIT License.
+## 👤 Author
 
+**Surud Mahajan**
+
+---
+
+## ⚖️ License
+
+This project is under the **MIT License**.
 
 
 
