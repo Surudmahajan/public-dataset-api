@@ -17,18 +17,6 @@ The project uses a local **SQLite** database and **HTML templates**.
 
 ---
 
-## 📂 Project Structure
-public-dataset-api/
-  ├── app.py           # The main FastAPI app (one file)
-  ├── templates/       # Contains HTML templates
-  │   ├── login.html
-  │   ├── dashboard.html
-  ├── users.db         # SQLite database (created automatically)
-  ├── README.md        # This file
-
-
----
-
 ## ⚙️ Tech Used
 
 - **Python**
