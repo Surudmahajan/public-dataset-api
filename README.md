@@ -4,10 +4,6 @@ Welcome to the Public Dataset API, a lightweight and beginner-friendly project t
 
 With this simple project, you’ll learn how to handle user registration, secure login, and unique API key generation, backed by a local SQLite database.
 It’s perfect for students, developers, and anyone who wants a clean example of building a real-world API with a user dashboard, password hashing, and HTML templates — all without complicated setups or extra files.
-
-Use it as a starting point for your own APIs, learn the basics of authentication, or showcase it in your portfolio to demonstrate practical FastAPI skills.
-
-
 ---
 
 ## 🚀 Features
